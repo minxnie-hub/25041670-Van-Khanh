@@ -1,13 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Báo cáo thực hành Prompt Engineering trong học tập với ba tác vụ: tóm tắt tài liệu, giải thích blockchain và tạo bộ câu hỏi HSK 4.">
+  <title>Bài 3 · Thực hành Prompt Engineering trong học tập</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div class="site-shell">
+  <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+  <div class="paper-noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">VK</span><span>Vân Khánh<small>Academic portfolio</small></span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-label="Mở menu">Menu</button>
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="index.html">Giới thiệu</a><a href="index.html#bai-tap">Bài tập</a><a href="index.html#thong-tin">Thông tin</a><a href="index.html#lien-he">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
 
-<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Thử nghiệm ba cấp độ prompt cho những nhiệm vụ học tập thường gặp của sinh viên Ngôn ngữ Trung Quốc." name="description"/><title>Bài 3 · Viết prompt hiệu quả cho các tác vụ</title><link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="assets/css/styles.css" rel="stylesheet"/></head><body><div class="site-shell"><header class="site-header"><div class="nav-wrap"><a aria-label="Về trang chủ Vân Khánh" class="brand" href="index.html"><span aria-hidden="true" class="brand-mark"><svg fill="none" viewbox="0 0 48 48"><path d="M8 31c8-1 14-5 19-14 4 9 8 13 13 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M11 36c6-3 12-3 18 0s10 3 14 0" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M21 19c-5-5-9-6-12-4 1 6 5 9 11 9" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="35" cy="12" fill="currentColor" opacity=".35" r="3"></circle></svg></span><span class="brand-copy"><strong>Vân Khánh</strong><small>Portfolio CNS &amp; AI · 2026</small></span></a><button aria-expanded="false" aria-label="Mở menu" class="menu-btn" type="button"><span>Menu</span><i aria-hidden="true" class="menu-lines"></i></button><nav aria-label="Điều hướng chính" class="nav-links"><a href="index.html">Giới thiệu</a><a href="index.html#bai-tap">Bài tập</a><a href="index.html#thong-tin">Thông tin</a><a href="index.html#lien-he">Liên hệ</a></nav></div></header><div aria-hidden="true" class="paper-noise"></div><a class="skip-link" href="#main">Bỏ qua điều hướng</a><main id="main"><section class="article-hero"><div class="container"><div class="crumb">Bài tập 03 · Nhập môn CNS &amp; AI</div><h1>Viết prompt hiệu quả cho các tác vụ</h1><p class="article-summary">Thử nghiệm ba cấp độ prompt cho những nhiệm vụ học tập thường gặp của sinh viên Ngôn ngữ Trung Quốc.</p></div></section><div class="article-layout"><aside class="toc"><strong>Mục lục</strong><ol><li><a href="#muc-1">I. Mục tiêu và lựa chọn tác vụ</a></li><li><a href="#muc-2">II. Tác vụ 1: Tóm tắt một tài liệu học thuật</a></li><li><a href="#muc-3">III. Tác vụ 2: Giải thích một khái niệm phức tạp</a></li><li><a href="#muc-4">IV. Tác vụ 3: Tạo bộ câu hỏi ôn tập</a></li><li><a href="#muc-5">V. Bảng tổng hợp kết quả thử nghiệm</a></li><li><a href="#muc-6">VI. Nguyên tắc viết prompt hiệu quả</a></li><li><a href="#muc-7">VII. Kết luận</a></li></ol></aside><article class="document">
-<h2>BÁO CÁO: VIẾT PROMPT HIỆU QUẢ CHO CÁC TÁC VỤ HỌC TẬP</h2>
-<p><strong>Họ và tên:</strong> Vũ Đan Ngọc Vân Khánh<br/><strong>MSSV:</strong> 25041670<br/><strong>Khoa:</strong> Ngôn ngữ và Văn hóa Trung Quốc<br/><strong>Trường:</strong> Đại học Ngoại ngữ, ĐHQGHN</p>
-<h2 id="muc-1">I. Mục tiêu và lựa chọn tác vụ</h2><p>Bài thực hành tập trung vào ba tác vụ thường gặp trong quá trình học tiếng Trung: tóm tắt tài liệu học thuật, giải thích một khái niệm ngôn ngữ và tạo bộ câu hỏi ôn tập. Mỗi tác vụ được thử nghiệm ở ba mức độ prompt để quan sát sự khác biệt về độ chính xác, cấu trúc và khả năng sử dụng của đầu ra.</p>
-<h2 id="muc-2">II. Tác vụ 1: Tóm tắt một tài liệu học thuật</h2><div class="prompt-grid"><div class="prompt-card"><h4>Prompt cơ bản</h4><p>“Hãy tóm tắt tài liệu này.”</p></div><div class="prompt-card"><h4>Prompt cải tiến</h4><p>“Hãy tóm tắt tài liệu về ảnh hưởng của mạng xã hội đến việc học tiếng Trung trong 150–180 từ, nêu mục tiêu, phương pháp, kết quả và hạn chế.”</p></div><div class="prompt-card"><h4>Prompt nâng cao</h4><p>“Bạn là trợ giảng ngành Ngôn ngữ Trung Quốc. Hãy đọc tài liệu, tóm tắt theo bốn mục: vấn đề nghiên cứu, phương pháp, phát hiện chính, giá trị ứng dụng. Chỉ dùng thông tin có trong tài liệu; đánh dấu điểm chưa đủ dữ liệu.”</p></div></div><p><strong>So sánh:</strong> Prompt cơ bản cho kết quả ngắn nhưng dễ bỏ sót phương pháp và giới hạn nghiên cứu. Prompt cải tiến tạo cấu trúc rõ hơn. Prompt nâng cao kiểm soát vai trò, phạm vi và tiêu chí đầu ra nên kết quả dễ kiểm chứng và phù hợp với mục đích học tập.</p>
-<h2 id="muc-3">III. Tác vụ 2: Giải thích một khái niệm phức tạp</h2><div class="prompt-grid"><div class="prompt-card"><h4>Prompt cơ bản</h4><p>“Giải thích cách dùng trợ từ 了 trong tiếng Trung.”</p></div><div class="prompt-card"><h4>Prompt cải tiến</h4><p>“Giải thích sự khác nhau giữa 了 chỉ sự hoàn thành và 了 cuối câu cho sinh viên năm nhất, kèm ít nhất bốn ví dụ có dịch tiếng Việt.”</p></div><div class="prompt-card"><h4>Prompt nâng cao</h4><p>“Đóng vai giảng viên ngữ pháp Hán ngữ. Giải thích hai cách dùng chính của 了 theo trình tự: định nghĩa, dấu hiệu nhận biết, lỗi người Việt thường gặp, ví dụ đúng/sai và bài tập tự kiểm tra. Dùng ngôn ngữ dễ hiểu, không vượt quá trình độ HSK 3.”</p></div></div><p><strong>So sánh:</strong> Khi prompt xác định đối tượng, trình độ và dạng ví dụ, câu trả lời bớt chung chung. Việc yêu cầu ví dụ đúng/sai và lỗi phổ biến giúp người học nhận diện cách dùng trong ngữ cảnh thay vì chỉ ghi nhớ định nghĩa.</p>
-<h2 id="muc-4">IV. Tác vụ 3: Tạo bộ câu hỏi ôn tập</h2><div class="prompt-grid"><div class="prompt-card"><h4>Prompt cơ bản</h4><p>“Tạo câu hỏi ôn tập từ vựng tiếng Trung.”</p></div><div class="prompt-card"><h4>Prompt cải tiến</h4><p>“Tạo 10 câu hỏi ôn tập từ vựng chủ đề trường học ở trình độ HSK 2, gồm trắc nghiệm, điền từ và dịch câu; có đáp án cuối bài.”</p></div><div class="prompt-card"><h4>Prompt nâng cao</h4><p>“Bạn là người thiết kế bài kiểm tra HSK. Tạo bộ 12 câu theo tỉ lệ 4 nhận biết, 4 vận dụng, 4 phân biệt lỗi. Dùng từ vựng chủ đề trường học, không lặp đáp án, giải thích ngắn vì sao mỗi đáp án đúng.”</p></div></div><p><strong>So sánh:</strong> Prompt nâng cao tạo bộ câu hỏi cân bằng hơn vì có cấu trúc độ khó, loại câu và tiêu chí không lặp. Phần giải thích đáp án biến bài kiểm tra thành công cụ học tập thay vì chỉ chấm đúng hoặc sai.</p>
-<h2 id="muc-5">V. Bảng tổng hợp kết quả thử nghiệm</h2><div class="table-scroll"><table><tr><th scope="col">Tiêu chí</th><th scope="col">Prompt cơ bản</th><th scope="col">Prompt cải tiến</th><th scope="col">Prompt nâng cao</th></tr><tr><td>Độ rõ ràng</td><td>Thấp, yêu cầu rộng</td><td>Khá rõ, có giới hạn</td><td>Rất rõ, có vai trò và tiêu chí</td></tr><tr><td>Cấu trúc đầu ra</td><td>Không ổn định</td><td>Có bố cục</td><td>Nhất quán và dễ kiểm tra</td></tr><tr><td>Mức độ phù hợp</td><td>Cần chỉnh sửa nhiều</td><td>Phù hợp phần lớn</td><td>Phù hợp với đối tượng và mục tiêu</td></tr><tr><td>Rủi ro</td><td>Dễ lan man hoặc thiếu ý</td><td>Vẫn cần kiểm chứng</td><td>Giảm bịa đặt nhờ giới hạn nguồn</td></tr></table></div>
-<h2 id="muc-6">VI. Nguyên tắc viết prompt hiệu quả</h2><ol><li>Nêu rõ tác vụ và mục tiêu sử dụng kết quả.</li><li>Xác định vai trò, đối tượng và trình độ người đọc.</li><li>Cung cấp ngữ cảnh hoặc tài liệu nguồn thay vì hỏi quá chung.</li><li>Quy định cấu trúc, độ dài và tiêu chí đánh giá đầu ra.</li><li>Yêu cầu AI không bịa thông tin và đánh dấu phần chưa chắc chắn.</li><li>Thử nghiệm, so sánh và chỉnh sửa prompt theo chất lượng kết quả.</li><li>Luôn kiểm chứng nội dung trước khi đưa vào bài học hoặc bài nộp.</li></ol>
-<h2 id="muc-7">VII. Kết luận</h2><p>Prompt hiệu quả không nhất thiết phải dài, nhưng phải đủ cụ thể để AI hiểu đúng mục tiêu, đối tượng và hình thức đầu ra. Qua thử nghiệm, prompt cải tiến và prompt nâng cao cho kết quả có cấu trúc, phù hợp với sinh viên ngành Ngôn ngữ Trung Quốc và dễ kiểm chứng hơn prompt cơ bản.</p>
-<nav aria-label="Điều hướng bài tập" class="page-nav"><a href="bai-2.html"><small>Bài trước</small>← Bài 2</a><a href="bai-4.html" style="text-align:right"><small>Bài tiếp theo</small>Bài 4 →</a></nav></article></div></main><footer class="site-footer" id="lien-he"><div class="container"><div class="footer-grid"><div><h2>Ngôn ngữ mở lối.<br/>Công nghệ nối dài hành trình.</h2><p>Portfolio môn Nhập môn Công nghệ số và Trí tuệ nhân tạo, được trình bày theo sáu bài tập độc lập.</p></div><div class="footer-links"><a href="tel:0833292007">0833 292 007</a><a href="index.html#bai-tap">Xem sáu bài tập</a><a href="index.html">Về trang chủ</a></div></div><div class="footer-bottom"><span>Vũ Đan Ngọc Vân Khánh · 25041670</span><span>Đại học Ngoại ngữ · ĐHQGHN</span></div></div></footer></div><script src="assets/js/main.js"></script></body></html>
+  <main id="main">
+    <section class="article-hero">
+      <div class="container">
+        <div class="crumb">Bài tập 03 · Nhập môn CNS &amp; AI</div>
+        <h1>Thực hành Prompt Engineering trong học tập</h1>
+        <p class="article-summary">So sánh ba cấp độ prompt qua ba tác vụ: tóm tắt tài liệu học thuật, giải thích khái niệm blockchain và tạo bộ câu hỏi ôn tập HSK 4.</p>
+      </div>
+    </section>
+
+    <div class="article-layout">
+      <aside class="toc">
+        <strong>Mục lục</strong>
+        <ol>
+          <li><a href="#mo-dau">I. Mở đầu</a></li>
+          <li><a href="#quy-trinh">II. Quy trình thực hiện</a></li>
+          <li><a href="#minh-chung">Minh chứng thử nghiệm</a></li>
+          <li><a href="#ket-qua">III. Kết quả thử nghiệm</a></li>
+          <li><a href="#phan-tich">IV. Phân tích và đánh giá</a></li>
+          <li><a href="#nguyen-tac">V. Nguyên tắc viết prompt hiệu quả</a></li>
+          <li><a href="#ket-luan">VI. Kết luận</a></li>
+        </ol>
+      </aside>
+
+      <article class="document">
+        <h1>BÁO CÁO THỰC HÀNH PROMPT ENGINEERING TRONG HỌC TẬP</h1>
+        <p><strong>Họ và tên:</strong> Vũ Đan Ngọc Vân Khánh<br>
+        <strong>MSSV:</strong> 25041670<br>
+        <strong>Trường:</strong> Đại học Ngoại ngữ, ĐHQGHN</p>
+
+        <h2 id="mo-dau">I. MỞ ĐẦU</h2>
+        <h3>1. Bối cảnh</h3>
+        <p>Trong những năm gần đây, sự phát triển mạnh mẽ của trí tuệ nhân tạo (AI) đã tạo ra nhiều thay đổi trong lĩnh vực giáo dục. Các mô hình ngôn ngữ lớn (Large Language Models - LLMs) như ChatGPT có khả năng hỗ trợ người học trong nhiều hoạt động như tìm kiếm thông tin, tóm tắt tài liệu, giải thích kiến thức và tạo nội dung học tập. Tuy nhiên, chất lượng phản hồi của AI không chỉ phụ thuộc vào năng lực của mô hình mà còn phụ thuộc vào cách người dùng đặt câu hỏi hay xây dựng prompt.</p>
+        <p>Prompt Engineering là quá trình thiết kế và tối ưu hóa câu lệnh đầu vào nhằm giúp AI hiểu rõ yêu cầu và tạo ra kết quả phù hợp nhất. Vì vậy, việc tìm hiểu và thực hành Prompt Engineering có ý nghĩa quan trọng trong việc khai thác hiệu quả các công cụ AI phục vụ học tập.</p>
+
+        <h3>2. Mục tiêu</h3>
+        <ul>
+          <li>Tìm hiểu ảnh hưởng của prompt đến chất lượng phản hồi của AI.</li>
+          <li>So sánh hiệu quả giữa các mức độ prompt khác nhau.</li>
+          <li>Rút ra các nguyên tắc viết prompt hiệu quả trong học tập.</li>
+        </ul>
+
+        <h3>3. Công cụ sử dụng</h3>
+        <ul>
+          <li><strong>Công cụ AI:</strong> ChatGPT</li>
+          <li><strong>Mô hình thử nghiệm:</strong> GPT</li>
+          <li><strong>Phương pháp:</strong> Xây dựng nhiều phiên bản prompt cho cùng một tác vụ và so sánh kết quả.</li>
+        </ul>
+
+        <h2 id="quy-trinh">II. QUY TRÌNH THỰC HIỆN</h2>
+        <h3>Bước 1: Lựa chọn tác vụ học tập</h3>
+        <p>Ba tác vụ được lựa chọn gồm:</p>
+        <ol>
+          <li>Tóm tắt tài liệu học thuật.</li>
+          <li>Giải thích một khái niệm phức tạp.</li>
+          <li>Tạo bộ câu hỏi ôn tập.</li>
+        </ol>
+
+        <h3>Bước 2: Thiết kế prompt</h3>
+        <p>Đối với mỗi tác vụ, xây dựng ba loại prompt:</p>
+        <ul>
+          <li>Prompt cơ bản</li>
+          <li>Prompt cải tiến</li>
+          <li>Prompt nâng cao</li>
+        </ul>
+
+        <h3>Bước 3: Thử nghiệm với ChatGPT</h3>
+        <p>Nhập từng prompt vào ChatGPT và ghi nhận kết quả.</p>
+
+        <h3>Bước 4: Chụp màn hình</h3>
+        <p>Ghi lại quá trình nhập prompt và kết quả phản hồi của ChatGPT để so sánh trực quan giữa ba mức độ.</p>
+
+        <section id="minh-chung" class="evidence-flow" aria-labelledby="minh-chung-title">
+          <h2 id="minh-chung-title">Minh chứng thử nghiệm</h2>
+
+          <div class="evidence-step">
+            <h3>Hình 1. Prompt cơ bản và kết quả tác vụ 1</h3>
+            <figure><a href="assets/img/bai-3-hinh-1.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-1.png" alt="Prompt cơ bản và kết quả tóm tắt tài liệu học thuật" loading="eager"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 2. Prompt cải tiến và kết quả tác vụ 1</h3>
+            <figure><a href="assets/img/bai-3-hinh-2.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-2.png" alt="Prompt cải tiến và kết quả tóm tắt tài liệu học thuật" loading="lazy"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 3. Prompt nâng cao và kết quả tác vụ 1</h3>
+            <figure><a href="assets/img/bai-3-hinh-3.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-3.png" alt="Prompt nâng cao và kết quả tóm tắt tài liệu học thuật" loading="lazy"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 4. Prompt cơ bản và kết quả tác vụ 2</h3>
+            <figure><a href="assets/img/bai-3-hinh-4.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-4.png" alt="Prompt cơ bản và kết quả giải thích blockchain" loading="lazy"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 5. Prompt cải tiến và kết quả tác vụ 2</h3>
+            <figure class="figure-tall"><a href="assets/img/bai-3-hinh-5.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-5.png" alt="Prompt cải tiến và kết quả giải thích blockchain" loading="lazy"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 6. Prompt nâng cao và kết quả tác vụ 2</h3>
+            <figure class="figure-tall"><a href="assets/img/bai-3-hinh-6.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-6.png" alt="Prompt nâng cao và kết quả giải thích blockchain" loading="lazy"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 7. Prompt cơ bản và kết quả tác vụ 3</h3>
+            <figure class="figure-tall"><a href="assets/img/bai-3-hinh-7.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-7.png" alt="Prompt cơ bản và kết quả tạo câu hỏi ôn tập HSK 4" loading="lazy"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 8. Prompt cải tiến và kết quả tác vụ 3</h3>
+            <figure class="figure-tall"><a href="assets/img/bai-3-hinh-8.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-8.png" alt="Prompt cải tiến và kết quả tạo câu hỏi ôn tập HSK 4" loading="lazy"></a></figure>
+          </div>
+
+          <div class="evidence-step">
+            <h3>Hình 9. Prompt nâng cao và kết quả tác vụ 3</h3>
+            <figure class="figure-tall"><a href="assets/img/bai-3-hinh-9.png" target="_blank" rel="noopener"><img src="assets/img/bai-3-hinh-9.png" alt="Prompt nâng cao và kết quả tạo câu hỏi ôn tập HSK 4" loading="lazy"></a></figure>
+          </div>
+        </section>
+
+        <h2 id="ket-qua">III. KẾT QUẢ THỬ NGHIỆM</h2>
+
+        <h3>1. Tác vụ 1: Tóm tắt tài liệu học thuật</h3>
+        <div class="prompt-grid">
+          <div class="prompt-card"><h4>Prompt cơ bản</h4><p>“Hãy tóm tắt đoạn văn sau.”</p><p><strong>Nhận xét:</strong> AI tạo được bản tóm tắt đúng nội dung nhưng còn mang tính khái quát, chưa xác định rõ trọng tâm và cách trình bày.</p></div>
+          <div class="prompt-card"><h4>Prompt cải tiến</h4><p>“Hãy tóm tắt đoạn văn sau trong khoảng 70 từ. Tập trung vào các ý chính và thuật ngữ quan trọng. Trình bày dưới dạng gạch đầu dòng.”</p><p><strong>Nhận xét:</strong> Kết quả có cấu trúc rõ ràng hơn, các ý chính được thể hiện ngắn gọn và dễ theo dõi.</p></div>
+          <div class="prompt-card"><h4>Prompt nâng cao</h4><p>“Bạn là một trợ giảng đại học chuyên hỗ trợ sinh viên đọc tài liệu học thuật...”</p><p><strong>Nhận xét:</strong> Kết quả có chất lượng cao nhất. AI xác định được chủ đề chính, khái niệm quan trọng và trình bày nội dung theo từng mục rõ ràng.</p></div>
+        </div>
+        <div class="table-scroll"><table>
+          <thead><tr><th scope="col">Tiêu chí</th><th scope="col">Cơ bản</th><th scope="col">Cải tiến</th><th scope="col">Nâng cao</th></tr></thead>
+          <tbody><tr><td>Độ rõ ràng</td><td>Trung bình</td><td>Tốt</td><td>Rất tốt</td></tr><tr><td>Cấu trúc</td><td>Thấp</td><td>Khá</td><td>Cao</td></tr><tr><td>Khả năng hỗ trợ học tập</td><td>Trung bình</td><td>Tốt</td><td>Rất tốt</td></tr></tbody>
+        </table></div>
+
+        <h3>2. Tác vụ 2: Giải thích khái niệm Blockchain</h3>
+        <div class="prompt-grid">
+          <div class="prompt-card"><h4>Prompt cơ bản</h4><p>“Giải thích blockchain.”</p><p><strong>Nhận xét:</strong> AI giải thích đúng khái niệm nhưng còn khá ngắn gọn và thiên về định nghĩa.</p></div>
+          <div class="prompt-card"><h4>Prompt cải tiến</h4><p>“Hãy giải thích blockchain bằng ngôn ngữ đơn giản cho sinh viên đại học. Bao gồm khái niệm, cách hoạt động và ví dụ thực tế.”</p><p><strong>Nhận xét:</strong> Câu trả lời đầy đủ hơn, có ví dụ thực tế giúp người học dễ hiểu.</p></div>
+          <div class="prompt-card"><h4>Prompt nâng cao</h4><p>“Bạn là giảng viên công nghệ thông tin...”</p><p><strong>Nhận xét:</strong> Kết quả có tính sư phạm cao hơn, trình bày logic theo từng bước và có phần so sánh với hệ thống truyền thống giúp người đọc hình dung rõ ràng hơn.</p></div>
+        </div>
+        <div class="table-scroll"><table>
+          <thead><tr><th scope="col">Tiêu chí</th><th scope="col">Cơ bản</th><th scope="col">Cải tiến</th><th scope="col">Nâng cao</th></tr></thead>
+          <tbody><tr><td>Độ chi tiết</td><td>Thấp</td><td>Khá</td><td>Cao</td></tr><tr><td>Tính logic</td><td>Trung bình</td><td>Tốt</td><td>Rất tốt</td></tr><tr><td>Tính dễ hiểu</td><td>Trung bình</td><td>Tốt</td><td>Rất tốt</td></tr></tbody>
+        </table></div>
+
+        <h3>3. Tác vụ 3: Tạo bộ câu hỏi ôn tập HSK 4</h3>
+        <div class="prompt-grid">
+          <div class="prompt-card"><h4>Prompt cơ bản</h4><p>“Hãy tạo câu hỏi ôn tập HSK 4.”</p><p><strong>Nhận xét:</strong> AI tạo được câu hỏi nhưng chưa phân loại rõ dạng bài và mức độ.</p></div>
+          <div class="prompt-card"><h4>Prompt cải tiến</h4><p>“Hãy tạo 5 câu hỏi ôn tập HSK 4 gồm từ vựng, ngữ pháp và đọc hiểu kèm đáp án.”</p><p><strong>Nhận xét:</strong> Bộ câu hỏi có cấu trúc tốt hơn, nội dung bám sát mục tiêu ôn tập.</p></div>
+          <div class="prompt-card"><h4>Prompt nâng cao</h4><p>“Bạn là giáo viên luyện thi HSK có kinh nghiệm...”</p><p><strong>Nhận xét:</strong> Kết quả gần với đề luyện thi thực tế, có đáp án và giải thích chi tiết, giúp người học vừa kiểm tra kiến thức vừa hiểu phương pháp làm bài.</p></div>
+        </div>
+        <div class="table-scroll"><table>
+          <thead><tr><th scope="col">Tiêu chí</th><th scope="col">Cơ bản</th><th scope="col">Cải tiến</th><th scope="col">Nâng cao</th></tr></thead>
+          <tbody><tr><td>Tính hệ thống</td><td>Thấp</td><td>Khá</td><td>Cao</td></tr><tr><td>Độ sát đề thi</td><td>Trung bình</td><td>Tốt</td><td>Rất tốt</td></tr><tr><td>Giá trị học tập</td><td>Trung bình</td><td>Tốt</td><td>Rất tốt</td></tr></tbody>
+        </table></div>
+
+        <h2 id="phan-tich">IV. PHÂN TÍCH VÀ ĐÁNH GIÁ</h2>
+        <p>Qua ba tác vụ thử nghiệm, có thể thấy chất lượng phản hồi của AI tăng lên đáng kể khi prompt được thiết kế chi tiết hơn.</p>
+        <p>Đối với prompt cơ bản, AI vẫn hoàn thành nhiệm vụ nhưng thường đưa ra câu trả lời chung chung do thiếu thông tin định hướng.</p>
+        <p>Prompt cải tiến bổ sung các yêu cầu về độ dài, nội dung và định dạng đầu ra. Điều này giúp AI hiểu rõ mục tiêu hơn và tạo phản hồi phù hợp hơn.</p>
+        <p>Prompt nâng cao cho kết quả tốt nhất nhờ áp dụng các kỹ thuật Prompt Engineering:</p>
+        <ul>
+          <li><strong>Role Prompting:</strong> Gán vai trò cụ thể cho AI (trợ giảng, giảng viên, giáo viên luyện thi).</li>
+          <li><strong>Context Specification:</strong> Cung cấp ngữ cảnh và đối tượng người dùng.</li>
+          <li><strong>Structured Prompting:</strong> Chia nhiệm vụ thành các bước rõ ràng.</li>
+          <li><strong>Output Formatting:</strong> Yêu cầu cách trình bày cụ thể.</li>
+        </ul>
+        <p>Nhờ đó, phản hồi trở nên chính xác, logic và có giá trị học tập cao hơn. Tuy nhiên, prompt nâng cao cũng có hạn chế là cần nhiều thời gian và công sức để thiết kế hơn so với prompt đơn giản.</p>
+
+        <h2 id="nguyen-tac">V. NGUYÊN TẮC VIẾT PROMPT HIỆU QUẢ</h2>
+        <ol>
+          <li>Xác định rõ mục tiêu của tác vụ.</li>
+          <li>Cung cấp đầy đủ ngữ cảnh.</li>
+          <li>Chỉ định vai trò phù hợp cho AI.</li>
+          <li>Chia nhiệm vụ thành các bước cụ thể.</li>
+          <li>Quy định rõ định dạng đầu ra.</li>
+          <li>Xác định đối tượng người đọc hoặc người học.</li>
+          <li>Kết hợp nhiều kỹ thuật Prompt Engineering khi cần.</li>
+        </ol>
+        <blockquote><strong>Công thức chung:</strong><br>Vai trò + Nhiệm vụ + Ngữ cảnh + Yêu cầu cụ thể + Định dạng đầu ra</blockquote>
+
+        <h2 id="ket-luan">VI. KẾT LUẬN</h2>
+        <p>Kết quả thử nghiệm cho thấy prompt có ảnh hưởng trực tiếp đến chất lượng phản hồi của mô hình ngôn ngữ lớn. Prompt càng rõ ràng, cụ thể và có cấu trúc thì kết quả càng chính xác, logic và hữu ích cho học tập.</p>
+        <p>Prompt Engineering không chỉ là kỹ thuật giao tiếp với AI mà còn là một kỹ năng học tập quan trọng trong thời đại số. Việc nắm vững các nguyên tắc xây dựng prompt sẽ giúp sinh viên khai thác hiệu quả hơn các công cụ AI trong học tập và nghiên cứu.</p>
+
+        <p class="source-file"><a href="assets/docs/bai-3.pdf" target="_blank" rel="noopener">Mở báo cáo Bài 3 gốc (PDF) ↗</a></p>
+
+        <nav class="page-nav" aria-label="Điều hướng bài tập">
+          <a href="bai-2.html"><small>Bài trước</small>← Bài 2</a>
+          <a href="bai-4.html" style="text-align:right"><small>Bài tiếp theo</small>Bài 4 →</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="lien-he">
+    <div class="container"><div class="footer-grid"><div><h2>Học ngôn ngữ bằng một tư duy số có trách nhiệm.</h2><p>Portfolio môn Nhập môn Công nghệ số và Trí tuệ nhân tạo.</p></div><div class="footer-links"><a href="tel:0833292007">0833 292 007</a><a href="index.html#bai-tap">Xem 6 bài tập</a><a href="index.html">Về trang chủ</a></div></div><div class="footer-bottom"><span>Vũ Đan Ngọc Vân Khánh · 25041670</span><span>Đại học Ngoại ngữ · ĐHQGHN</span></div></div>
+  </footer>
+</div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

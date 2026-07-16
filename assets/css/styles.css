@@ -234,3 +234,8 @@ main{position:relative;z-index:1}
 :focus-visible{outline:3px solid var(--water-400);outline-offset:4px}
 @media print{.site-header,.site-footer,.toc,.page-nav,.paper-noise{display:none!important}.article-hero{padding:20px 0;background:white}.article-layout{display:block;max-width:none;padding:20px}.document{max-width:none}.document figure img,.document img{max-height:none;box-shadow:none}.table-scroll{overflow:visible}.document table{min-width:0;font-size:9pt}.reveal{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.portrait-frame{transform:none!important}}
+
+/* Bài 3: ảnh minh chứng dạng dọc cần giữ đầy đủ nội dung thay vì bị cắt theo chiều cao. */
+.document figure.figure-tall img{max-height:none;width:min(100%,620px)}
+.document figure a{display:block;width:fit-content;max-width:100%;margin-inline:auto}
+.source-file{margin-top:48px!important;padding-top:22px;border-top:1px solid var(--line-strong);font-size:.84rem}
